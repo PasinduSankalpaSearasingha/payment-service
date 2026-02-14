@@ -43,4 +43,6 @@ jobs:
           az containerapp update \
             --name ${{ secrets.CONTAINER_APP_NAME }} \
             --resource-group ${{ secrets.RESOURCE_GROUP }} \
-            --image ${{ secrets.ACR_NAME }}.azurecr.io/payment-service:${{ github.sha }}
+            --image ${{ secrets.ACR_NAME }}.azurecr.io/payment-service:${{ github.sha }} \
+            --ingress external \
+            --target-port 8081
