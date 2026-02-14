@@ -7,6 +7,9 @@ COPY mvnw .
 COPY mvnw.cmd .
 COPY src src
 
+# Fix permissions for the Maven wrapper
+RUN chmod +x mvnw
+
 # Build the application
 RUN ./mvnw clean package -DskipTests
 
